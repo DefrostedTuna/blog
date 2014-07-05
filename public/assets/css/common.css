@@ -1,0 +1,179 @@
+* {
+	margin: 0;
+}
+
+body {
+	background: url('../img/body.png');
+}
+
+html, body {
+	height: 100%;
+}
+
+.wrapper {
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+	margin: 0 auto -7em;
+}
+
+.header {
+	height: 7em;
+	background: url('../img/headerBG.png');
+	color: white;
+}
+
+.navwrap {
+	min-width: 100%;
+	height: auto;
+}
+
+#right-side h1,
+#right-side h2,
+#right-side h3,
+#right-side h4,
+#right-side h5 {
+	color: white;
+}
+
+footer, .push {
+	height: 7em;
+}
+
+footer {
+	color: gray;
+}
+
+footer hr {
+	width: 95%;
+	margin: 0px auto;
+}
+
+.top-bar input {
+    height: auto !important;
+    padding-top: .35rem !important;
+    padding-bottom: .35rem !important;
+}
+
+.bg-dark {
+	background: #333;
+	color: #FFF;
+}
+
+.bg-light {
+	background: #FFF;
+	color: #000;
+}
+
+.plain-link-light {
+	color: gray;
+}
+
+.plain-link-light:hover {
+	color: gray;
+	text-decoration: underline;
+}
+
+.plain-link-dark {
+	color: black;
+}
+
+.plain-link-dark:hover {
+	color: black;
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+.margin-bottom-2 {
+	margin-bottom: 2rem;
+}
+
+textarea {
+	height: 10rem;
+}
+
+#wysiwyg {
+	height: 20rem;
+}
+
+.no-float {
+	float: none;
+}
+
+.inline-list-center li {
+	float: none;
+	display: inline-block;
+}
+
+.spacer {
+	margin: 20px;
+}
+
+.margin-top {
+	margin-top: 1rem;
+}
+
+.margin-bottom {
+	margin-bottom: 1rem;
+}
+
+.margin-top-none {
+	margin-top: 0rem !important;
+}
+
+.margin-bottom-none {
+	margin-bottom: 0rem !important;
+}
+
+h1, h2, h3 {
+	margin-top: 1.3rem;
+}
+
+.va-top {
+	vertical-align: top;
+}
+
+.va-center {
+	vertical-align: middle !important;
+}
+
+.va-bottom {
+	vertical-align: bottom; !important;
+}
+
+.underline {
+	text-decoration: underline;
+}
+
+.inline {
+	display: inline !important;
+}
+
+.archive-year-hr {
+	width: 25%;
+	min-width: 100px;
+	margin-top: 0rem;
+}
+
+.no-margin-top-hr {
+	margin: 0rem;
+}
+
+.break-word {
+	word-wrap: break-word;
+}
+
+.post-background:nth-of-type(even) {
+	background: #ccc;
+}
+
+.padding {
+	padding-left: .5rem;
+	padding-top: .5rem;
+	padding-bottom: .5rem;
+}
