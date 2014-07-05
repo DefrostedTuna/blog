@@ -1,6 +1,6 @@
 <?php
 
-class ImageController extends Basecontroller {
+class ImageController extends BaseController {
 
 	public function getManage($slug) {
 
