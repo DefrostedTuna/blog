@@ -50,21 +50,13 @@ class Post extends Eloquent implements SluggableInterface {
                 ->get();
     }
 
-    public static function archiveByMonth($year = null) {
-        if($year) { // if year is supplied, return for that given year
-            return  Post::select(DB::raw('MONTH(created_at) month, MONTHNAME(created_at) month_name, COUNT(*) post_count'))
-                    ->where('visible', '=', 1)
-                    ->whereRaw('YEAR(created_at) =' . $year)
-                    ->groupBy('month')
-                    ->orderBy('month', 'desc')
-                    ->get();
-        } else { //return all months
-            return  Post::select(DB::raw('MONTH(created_at) month, MONTHNAME(created_at) month_name, COUNT(*) post_count'))
-                    ->where('visible', '=', 1)
-                    ->groupBy('month')
-                    ->orderBy('month', 'desc')
-                    ->get();
-        }
+    public static function archiveByMonth($year) {
+        return  Post::select(DB::raw('MONTH(created_at) month, MONTHNAME(created_at) month_name, COUNT(*) post_count'))
+                ->where('visible', '=', 1)
+                ->whereRaw('YEAR(created_at) =' . $year)
+                ->groupBy('month')
+                ->orderBy('month', 'desc')
+                ->get();
     }
 
     public static function findBySlug($slug) {
@@ -76,11 +68,7 @@ class Post extends Eloquent implements SluggableInterface {
     }
 
     public static function getMonth($m) {
-       if(is_integer($m)) {
-            return Post::where('visible', '=', 1)->whereRaw('MONTH(created_at) =' . $m)->orderBy('created_at', 'desc')->get();
-       } else {
-            return Post::where('visible', '=', 1)->whereRaw('MONTHNAME(created_at) =' . $m)->orderBy('created_at', 'desc')->get();
-       }
+        return Post::where('visible', '=', 1)->whereRaw('MONTH(created_at) =' . $m)->orderBy('created_at', 'desc')->get();
     }
 
     public static function getFeatured() {
