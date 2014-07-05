@@ -13,7 +13,7 @@ class Comment extends Eloquent {
 	}
 
 	public static function getRecent() {
-		return Comment::orderBy('created_at', 'desc')->take(5)->get();
+		return Comment::where('approved', '=', 1)->orderBy('created_at', 'desc')->take(5)->get();
 	}
 
     public function published() {
