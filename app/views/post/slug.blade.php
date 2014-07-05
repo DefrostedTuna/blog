@@ -1,5 +1,4 @@
 @extends('layout.single-column')
-<!--REFACTORED-->
 
 @section('title')
 {{ $post->title }}

@@ -1,5 +1,4 @@
 @extends('layout.double-column')
-<!--REFACTORED-->
 
 @section('title')
 Manage Posts
