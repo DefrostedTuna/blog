@@ -115,22 +115,24 @@
 		<div class="row">
 			<div class="medium-12 columns">
 				<div class="panel">
-						{{ Form::open(array('url' => URL::route('comments-delete'),
-											'class' => 'inline margin-bottom-none'))}}
-							<input type="hidden" name="comment_id" value="{{ $comment->id }}">
-							<input 	type="submit" 
-									class="right button label radius alert" 
-									onClick="return confirm('Are you sure you want to delete this?')" 
-									value="Delete">
-						{{ Form::close() }}
-						<span>
-							{{ HTML::image('assets/img/calendar.png', 'alt img', array('class' => 'va-top')) }}
-							{{ $comment->publishedShort() }}
-							&nbsp
-							{{ HTML::image('assets/img/pen.png', 'alt img', array('class' => 'va-top')) }}
-							{{ $comment->name }}
-						</span>
-						<hr class="margin-top-none">
+                    @if(Auth::check())
+                    {{ Form::open(array('url' => URL::route('comments-delete'),
+                                        'class' => 'inline margin-bottom-none'))}}
+                        <input type="hidden" name="comment_id" value="{{ $comment->id }}">
+                        <input 	type="submit"
+                                class="right button label radius alert"
+                                onClick="return confirm('Are you sure you want to delete this?')"
+                                value="Delete">
+                    {{ Form::close() }}
+                    @endif
+                    <span>
+                        {{ HTML::image('assets/img/calendar.png', 'alt img', array('class' => 'va-top')) }}
+                        {{ $comment->publishedShort() }}
+                        &nbsp
+                        {{ HTML::image('assets/img/pen.png', 'alt img', array('class' => 'va-top')) }}
+                        {{ $comment->name }}
+                    </span>
+                    <hr class="margin-top-none">
 					<p>{{{ $comment->body }}}</p>
 				</div>
 			</div>
